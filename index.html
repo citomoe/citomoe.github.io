@@ -25,9 +25,9 @@
 				persons: []
 			},
 			mounted() {
-				this.persons = [{name: 'Yoganand'}, {name: 'Alva'}];
+				// this.persons = [{name: 'Yoganand'}, {name: 'Alva'}];
 				//axios.get("https://api.myjson.com/bins/101fef").then(response => this.persons = response.data);
-				axios.get("https://github.com/citomoe/data.json").then(response => this.persons = response.data);
+				axios.get("https://citomoe.github.io/data.json").then(response => this.persons = response.data);
 /*				var getData = new XMLHttpRequest();
 				getData.open('GET','https://citomoe.github.io/data.json');
 				getData.onload = function() {
