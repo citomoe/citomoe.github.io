@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test JSON AJAX</title>
+</head>
+<body>
+	<h1>Test JSON and AJAX</h1>
+
+	<div id="app">
+
+		<ul>
+			<li v-for='person in persons'>{{ person.name }}</li>
+		</ul>
+
+	</div>
+
+
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+	<script>
+		new Vue({
+			el: '#app',
+			data: {
+				persons: []
+			},
+			mounted() {
+				this.persons = [{name: 'Yoganand'}, {name: 'Alva'}];
+				//axios.get("https://api.myjson.com/bins/101fef").then(response => this.persons = response.data);
+				axios.get("https://github.com/citomoe/data.json").then(response => this.persons = response.data);
+/*				var getData = new XMLHttpRequest();
+				getData.open('GET','https://citomoe.github.io/data.json');
+				getData.onload = function() {
+					var dataLoaded = JSON.parse(getData.responseText);
+					this.persons = dataLoaded;
+					console.log(dataLoaded);
+				}*/
+			}
+		});
+
+
+
+	</script>
+</body>
+</html>
