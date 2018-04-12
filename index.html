@@ -2,6 +2,11 @@
 <html>
 <head>
 	<title>Test JSON AJAX</title>
+	<style>
+		[v-cloak] {
+			display: none;
+		}
+	</style>
 </head>
 <body>
 	<h1>Test JSON and AJAX</h1>
@@ -9,7 +14,7 @@
 	<div id="app">
 
 		<ul>
-			<li v-for='person in persons'>{{ person.name }}</li>
+			<li v-cloak v-for='person in persons'>{{ person.name }}</li>
 		</ul>
 
 	</div>
